@@ -1,0 +1,360 @@
+:root{
+    --start: #7A403E;
+    --mid1: #9F2B00;
+    --mid2: #F89700;
+}
+
+html{
+    height:auto;
+    padding:0;
+    margin:0;
+}
+
+body{
+    height:100%;
+    padding:0;
+    margin:0;
+    background-color:#f5f5f5;
+    align-content: center;
+    align-items: center;
+    justify-content:center;
+    justify-items:center;
+}
+
+div{
+    display:block;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+p {
+    font-family: 'Rubik', sans-serif;
+    font-size: 13px;
+}
+
+h1{
+    color: #353535;
+    font-weight: bold;
+    padding:0;
+    font-family: 'Rubik', sans-serif;
+    font-weight:700;
+}
+
+h2{
+    color: #353535;
+    font-weight: bold;
+    padding:0;
+    font-family: 'Rubik', sans-serif;
+    font-weight:700;
+}
+
+.section {
+    max-width:1008px;
+    text-align: center;
+    margin:0 auto;
+    height:auto;
+}
+
+
+/*The header Section*/
+
+.header{
+    display:flex;
+    align-items:center;
+    padding: 0 3rem;
+}
+
+.grid-wrapper {
+    display: grid;
+    padding-bottom:9rem;
+    padding-top:3rem;
+    grid-template-columns: repeat(13,1fr);
+    width:100%;
+}
+
+.grid-intro{
+    text-align:left;
+    grid-column-start: 1;
+    grid-column-end:9;
+    grid-row-start:1;
+    grid-row-end: 2;
+    z-index:10;
+    margin-top:4.5rem;
+}
+
+.grid-photo{
+    position:relative;
+    height:auto;
+    grid-column-start: 10;
+    grid-column-end:14;
+    grid-row-start:1;
+    grid-row-end: 2;
+
+}
+
+.image-wrapper {
+    display:flex;
+    align-items: center;
+    justify-items: center;
+    width: 100%;
+    height: 100%;
+}
+
+@media (max-width: 840px){
+    .grid-intro{
+        grid-column-start: 1;
+        grid-column-end:14;
+        grid-row-start:1;
+        grid-row-end: 2;
+        margin-top:2.5rem;
+    }
+    
+    .grid-photo{
+        grid-column-start: 1;
+        grid-column-end:14;
+        grid-row-start:2;
+        grid-row-end: 3;
+    }
+
+    .grid-wrapper{
+        grid-template-rows:auto auto;
+        padding-top:4rem;
+        padding-bottom:12.5rem;
+        grid-row-gap: 2.5rem;
+        row-gap: 2.5rem;    
+    }
+
+}
+
+@keyframes background-pan-left {
+    from {
+        background-positon: 0% center;
+    }
+
+    to {
+        background-position: -200% center;
+    }
+}
+
+h1 > .name {
+    background:linear-gradient(
+        to right,
+        var(--start),
+        var(--mid1),
+        var(--mid2),
+        var(--start)
+    );
+    animation: background-pan-left 3s linear infinite;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-size:200%;
+}
+
+/*The Tools Section*/
+
+.tools{
+    padding: 0 3rem;
+    padding-top:0.5rem;
+    background-color:white;
+    height:170px;
+    border-radius: 4px;
+    box-shadow: 0 4px 15px -2px rgb(0 0 0 / 10%);
+    margin-bottom: 100px;
+}
+
+.tools-wrapper {
+    display:flex;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    height: auto;
+    width: auto;
+    align-items: center;
+    justify-items: center;
+}
+
+.tools-item {
+    width:80px;
+    height:80px;
+    margin: 0 1rem;
+}
+
+.tools-item > img {
+    width: 50px;
+    height:50px;
+}
+
+.tools-item > p {
+    color: rgb(100, 100, 100);
+}
+
+/*The Projects Section*/
+
+.projects{
+    position:relative;
+    display:grid;
+    border-radius: 4px;
+    height:auto;
+    margin-bottom: 50px;
+    transform:translateY(-80px);
+}
+
+.project-title{
+    position:relative;
+    height: auto;
+    padding-top: 3rem;
+    padding-bottom: 9rem;
+    box-sizing:content-box;
+    align-content: center;
+    justify-content: center;
+    text-align: center;
+    color:black;
+    background-color: #d0d0d0;
+}
+
+.project-title >p {
+    font-size: 15px;
+}
+
+.project-title > h1{
+    font-size:45px;
+    position:relative;
+    margin: 0 auto;
+    padding-bottom: 2rem;
+    color:white;
+    background:linear-gradient(
+        to right,
+        rgb(87, 87, 173),
+        rgb(135, 135, 135),
+        #353535,
+        rgb(87, 87, 173)
+    );
+    background-size:200%;
+    animation: background-pan-left 3s linear infinite;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.project-column-wrapper{
+    display:grid;
+    grid-template-rows:1fr 1fr ;
+    gap:20px;
+}
+
+.project-row-wrapper{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 20px;
+    align-content: center;
+}
+
+.project-item-grid {
+    margin: 0 auto;
+    height:14.5rem;
+    width:20rem;
+    display:grid;
+    grid-template-rows:80px auto;
+    padding: 0 1rem;
+    padding-top: 2rem;
+    padding-bottom: 1rem;
+    justify-items: center;
+    border-radius:6px;
+    background-color: rgb(255, 255, 255);
+    border: solid rgb(222, 222, 222) 1px;
+}
+
+.project-item-grid >img {
+    height:50px;
+    margin: 0 auto;
+    grid-row:1;
+    align-self: end;
+    padding-bottom: 15px;
+    margin-bottom: 15px;
+    border-bottom: solid rgb(174, 174, 174) 1px;
+}
+
+.project-item-text {
+    position:relative;
+    margin: 0 auto;
+    padding:0 1rem;
+    grid-row:2;
+    height: auto;
+}
+.project-item-text > h2 {
+    padding: 0 1rem;
+    margin:0 auto;
+    font-size:30px;
+}
+.project-item-text >p {
+    font-weight:500;
+    font-size:16px;
+    margin: auto auto;
+}
+
+
+@media (max-width: 840px){
+
+    .project-row-wrapper {
+        grid-template-rows: 1fr 1fr 1fr;
+        grid-template-columns: 1fr;
+        padding: 0 4rem;
+    }
+
+    .prw-1-item {
+        grid-template-rows: 1fr;
+        padding: 0 4rem;
+        grid-template-columns: 1fr 1fr 1fr;
+        height:14.5rem;
+    }
+}
+
+
+/*The Contact Section*/
+
+.contact-container{
+    display:flex;
+    text-align: center;
+    margin:0 auto;
+    background-color: rgb(51, 51, 51);
+    height:100px;
+    align-items: center;
+    justify-items: center;
+
+}
+
+.contact {
+    display:flex;
+    align-items: center;
+    justify-items: center;
+    margin: 0 auto;
+    padding: 0 0;
+    height: 100px;
+}
+
+.contact > a > img {
+    display:flex;
+    padding:0 0;
+    height:50px;
+    width:50px;
+    margin: 0 auto;
+}
+
+a {
+    margin: 0 1rem;
+    scale: 1;
+    transition: scale 0.5s;
+    border-radius:50%;
+} 
+
+a:active, a:hover {
+    scale: 1.1;
+    background:linear-gradient(
+        to right,
+        #77627e,
+        #4f3c58,
+        #77627e
+    );
+    background-size:200%;
+    animation: background-pan-left 2s linear infinite;
+}
